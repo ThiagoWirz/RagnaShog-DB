@@ -14,15 +14,15 @@ export default function MonsterPage() {
       setMonsters(monstersData);
     }
     loadPage();
-  });
+  }, [pageNumber]);
 
   return (
     <style.Container>
       <style.searchedContainer>
         {monsters.length !== 0 && (
           <>
-            {monsters.map((monster) => (
-              <style.Monster>
+            {monsters.map((monster, i) => (
+              <style.Monster key={i} index={i}>
                 <style.MonsterImg>
                   <img
                     onClick={() => {
@@ -49,14 +49,33 @@ export default function MonsterPage() {
       </style.searchedContainer>
       {pageNumber === 1 ? (
         <style.PageCounter>
-          <style.CurrentPage>{pageNumber}</style.CurrentPage>
-          <style.OtherPage>{pageNumber + 1}</style.OtherPage>
+          <style.CurrentPage isFirstPage={true}>{pageNumber}</style.CurrentPage>
+          <style.OtherPage
+            onClick={() => {
+              setPageNumber(pageNumber + 1);
+            }}
+          >
+            {pageNumber + 1}
+          </style.OtherPage>
         </style.PageCounter>
       ) : (
         <style.PageCounter>
-          <style.OtherPage>{pageNumber - 1}</style.OtherPage>
-          <style.CurrentPage>{pageNumber}</style.CurrentPage>
-          <style.OtherPage> {pageNumber + 1} </style.OtherPage>
+          <style.OtherPage
+            onClick={() => {
+              setPageNumber(pageNumber - 1);
+            }}
+          >
+            {pageNumber - 1}
+          </style.OtherPage>
+          <style.CurrentPage isFirstPage>{pageNumber}</style.CurrentPage>
+          <style.OtherPage
+            onClick={() => {
+              setPageNumber(pageNumber + 1);
+            }}
+          >
+            {" "}
+            {pageNumber + 1}{" "}
+          </style.OtherPage>
         </style.PageCounter>
       )}
     </style.Container>

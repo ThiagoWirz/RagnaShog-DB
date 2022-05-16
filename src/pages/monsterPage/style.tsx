@@ -1,5 +1,12 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+
+interface MonsterProps {
+  index: number;
+}
+
+interface PageProps {
+  isFirstPage: true;
+}
 
 export const Container = styled.div`
   padding-top: 50px;
@@ -22,12 +29,16 @@ export const searchedContainer = styled.div`
   border-radius: 12px;
 `;
 
-export const Monster = styled.div`
+export const Monster = styled.div<MonsterProps>`
   display: flex;
   height: 10%;
   align-items: center;
   background-color: #fff;
-  //border-radius: ${(props) => props.position};
+  border-bottom: 1px solid #888888;
+  border-radius: ${(props) =>
+    props.index === 0
+      ? "12px, 12px, 0px, 0px"
+      : props.index === 9 && "0px, 0px, 12px, 12px"};
 `;
 
 export const MonsterImg = styled.div`
@@ -132,14 +143,13 @@ export const PageCounter = styled.div`
   border-radius: 12px;
 `;
 
-export const CurrentPage = styled.div`
+export const CurrentPage = styled.div<PageProps>`
   background-color: #aaa;
   width: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* border-radius: ${(props) =>
-    props.isFirstPage ? "0, 0, 0 ,0" : "12px, 0, 12px, 0"}; */
+  border-radius: ${(props) => props.isFirstPage && "12px, 0, 0, 12px"};
 `;
 
 export const OtherPage = styled.button`
