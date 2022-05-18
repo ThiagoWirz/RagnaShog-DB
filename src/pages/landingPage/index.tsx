@@ -3,6 +3,7 @@ import monsterBanner from "../../assets/images/Monster_banner.jpg";
 import mapBanner from "../../assets/images/World_map.jpg";
 import itemBanner from "../../assets/images/Item_banner.jpg";
 import welcomeImg from "../../assets/images/welcome.png";
+import React from "react";
 
 export default function LandingPage() {
   return (
