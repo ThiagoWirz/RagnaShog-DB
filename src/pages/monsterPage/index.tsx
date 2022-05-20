@@ -9,7 +9,7 @@ export default function MonsterPage() {
   const [monster, setMonster] = useState<api.Monster>();
   const [propertyTable, setPropertyTable] = useState<api.PropertiesBonus[]>([]);
   const [display, setDisplay] = useState<string>("main");
-  const [ItemOrMap, setItemOrMap] = useState<string>("map");
+  const [ItemOrMap, setItemOrMap] = useState<string>("item");
 
   useEffect(() => {
     async function fetchMonsterData() {

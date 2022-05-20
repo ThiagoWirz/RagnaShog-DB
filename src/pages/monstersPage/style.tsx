@@ -2,10 +2,15 @@ import styled from "styled-components";
 
 interface MonsterProps {
   index: number;
+  route?: string;
 }
 
 interface PageProps {
   isFirstPage: boolean;
+}
+
+interface RouteProps {
+  route?: string;
 }
 
 export const Container = styled.div`
@@ -37,7 +42,7 @@ export const searchedContainer = styled.div`
 
 export const Monster = styled.div<MonsterProps>`
   display: flex;
-  height: 10%;
+  height: ${(props) => (props.route ? "auto" : "10%")};
   align-items: center;
   background-color: #fff;
   border-bottom: 1px solid #888888;
@@ -47,8 +52,8 @@ export const Monster = styled.div<MonsterProps>`
   border-bottom-right-radius: ${(props) => props.index === 8 && "12px"};
 `;
 
-export const MonsterImg = styled.div`
-  width: 20%;
+export const MonsterImg = styled.div<RouteProps>`
+  width: ${(props) => (props.route === "map" ? "16%" : "20%")};
   height: 100%;
   display: flex;
   justify-content: center;
@@ -61,17 +66,17 @@ export const MonsterImg = styled.div`
   }
 `;
 
-export const MonsterName = styled.div`
+export const MonsterName = styled.div<RouteProps>`
   height: 100%;
-  width: 20%;
+  width: ${(props) => (props.route === "map" ? "16%" : "20%")};
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
 `;
 
-export const MonsterProperty = styled.div`
-  width: 20%;
+export const MonsterProperty = styled.div<RouteProps>`
+  width: ${(props) => (props.route === "map" ? "16%" : "20%")};
   height: 100%;
   display: flex;
   justify-content: center;
@@ -121,8 +126,8 @@ export const MonsterProperty = styled.div`
       : props.property === "Vento" && "#000"};
 `;
 
-export const MonsterRace = styled.div`
-  width: 20%;
+export const MonsterRace = styled.div<RouteProps>`
+  width: ${(props) => (props.route === "map" ? "16%" : "20%")};
   height: 100%;
   display: flex;
   justify-content: center;
@@ -131,9 +136,9 @@ export const MonsterRace = styled.div`
   border-right: 1px solid #888888;
 `;
 
-export const MonsterSize = styled.div`
+export const MonsterSize = styled.div<RouteProps>`
   height: 100%;
-  width: 20%;
+  width: ${(props) => (props.route === "map" ? "16%" : "20%")};
   display: flex;
   justify-content: center;
   align-items: center;

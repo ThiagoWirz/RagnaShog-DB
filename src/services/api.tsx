@@ -18,6 +18,10 @@ export async function getMonsterById(id: number) {
   return baseAPI.get(`/monsters/${id}`);
 }
 
+export async function getMapById(id: number) {
+  return baseAPI.get(`/maps/${id}`);
+}
+
 export interface Race {
   id: number;
   name: string;
