@@ -17,8 +17,6 @@ export default function MapPage() {
   const [map, setMap] = useState<api.Map>();
   const navigate = useNavigate();
 
-  console.log(map);
-
   useEffect(() => {
     async function fetchMapData() {
       if (!id) return;

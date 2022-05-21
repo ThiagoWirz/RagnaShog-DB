@@ -56,6 +56,7 @@ export const MapContainer = styled.div`
   align-items: center;
   background-color: #fff;
   padding-top: 10px;
+  min-width: 100%;
 `;
 
 export const MapDisplay = styled.div``;

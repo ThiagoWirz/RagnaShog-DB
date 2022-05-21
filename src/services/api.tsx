@@ -22,6 +22,10 @@ export async function getMapById(id: number) {
   return baseAPI.get(`/maps/${id}`);
 }
 
+export async function getItemById(id: number) {
+  return baseAPI.get(`/itens/${id}`);
+}
+
 export interface Race {
   id: number;
   name: string;
