@@ -26,6 +26,10 @@ export async function getItemById(id: number) {
   return baseAPI.get(`/itens/${id}`);
 }
 
+export async function getItens(pageNumber: number, category: string) {
+  return baseAPI.get(`/itens?page=${pageNumber}&category=${category}`);
+}
+
 export interface Race {
   id: number;
   name: string;
