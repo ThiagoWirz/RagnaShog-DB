@@ -13,7 +13,7 @@ export default function LandingPage() {
         <h1>Bem Vindo</h1>
       </style.Welcome>
       <style.BannerContainer>
-        <style.Banner to="/map">
+        <style.Banner to="/maps">
           <img src={mapBanner} alt="map" />
 
           <h1>Mapa</h1>

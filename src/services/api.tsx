@@ -30,6 +30,10 @@ export async function getItens(pageNumber: number, category: string) {
   return baseAPI.get(`/itens?page=${pageNumber}&category=${category}`);
 }
 
+export async function getMaps(pageNumber: number, region: string) {
+  return baseAPI.get(`/maps?page=${pageNumber}&region=${region}`);
+}
+
 export interface Race {
   id: number;
   name: string;

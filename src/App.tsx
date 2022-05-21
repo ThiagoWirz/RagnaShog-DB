@@ -7,6 +7,7 @@ import MonsterPage from "./pages/monsterPage/index";
 import MapPage from "./pages/mapPage/index";
 import ItemPage from "./pages/itemPage/index";
 import ItensPage from "./pages/itensPage/index";
+import MapsPage from "./pages/mapsPage/index";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/monsters" element={<MonstersPage />} />
         <Route path="/monsters/:id" element={<MonsterPage />} />
+        <Route path="/maps" element={<MapsPage />} />
         <Route path="/maps/:id" element={<MapPage />} />
         <Route path="/itens" element={<ItensPage />} />
         <Route path="/itens/:id" element={<ItemPage />} />
