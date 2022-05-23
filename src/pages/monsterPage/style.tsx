@@ -196,6 +196,10 @@ export const MapImg = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  img {
+    height: 50px;
+    width: 50px;
+  }
 `;
 
 export const MapName = styled(Link)`

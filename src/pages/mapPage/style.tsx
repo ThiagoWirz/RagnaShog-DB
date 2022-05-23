@@ -47,6 +47,7 @@ export const BordersMap = styled.div`
   background: #888888;
   border: 1px solid #666666;
   border-radius: 12px;
+  justify-content: space-around;
 `;
 
 export const MapContainer = styled.div`
@@ -56,9 +57,14 @@ export const MapContainer = styled.div`
   align-items: center;
   background-color: #fff;
   padding-top: 10px;
-  min-width: 100%;
+  width: 100%;
 `;
 
-export const MapDisplay = styled.div``;
+export const MapDisplay = styled.div`
+  img {
+    height: 70px;
+    width: 70px;
+  }
+`;
 
 export const MapName = styled.div``;

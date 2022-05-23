@@ -9,8 +9,6 @@ export default function ItemPage() {
   const [item, setItem] = useState<api.Item>();
   const classString = item?.reqClass.join("/ ");
 
-  console.log(item);
-
   useEffect(() => {
     async function fetchItemData() {
       if (!id) return;
